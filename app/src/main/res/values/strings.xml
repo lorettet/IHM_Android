@@ -5,4 +5,6 @@
     <string name="title_group">Group</string>
     <string name="title_activity_trajet">ListeTrajets</string>
     <string name="title_activity_creer_trajet">CreerTrajetActivity</string>
+    <string name="logout">Logout</string>
+    <string name="about">About...</string>
 </resources>
