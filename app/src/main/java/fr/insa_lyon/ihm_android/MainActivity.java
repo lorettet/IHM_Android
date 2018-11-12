@@ -1,6 +1,7 @@
 package fr.insa_lyon.ihm_android;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -69,5 +70,10 @@ public class MainActivity extends AppCompatActivity {
     {
         Toast.makeText(MainActivity.this,"Votre signalement a été pris en compte",Toast.LENGTH_LONG).show();
     }
+    public void metho(View button2) {
+        Intent intent =new Intent(MainActivity.this, TrajetActivity.class);
+        startActivity(intent);
+    }
+
 
 }
