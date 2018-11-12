@@ -7,4 +7,5 @@
     <string name="title_activity_creer_trajet">CreerTrajetActivity</string>
     <string name="logout">Logout</string>
     <string name="about">About...</string>
+    <string name="alert_button">Signaler un danger</string>
 </resources>
