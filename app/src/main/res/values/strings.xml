@@ -3,4 +3,7 @@
     <string name="title_map">Map</string>
     <string name="title_directions">Directions</string>
     <string name="title_group">Group</string>
+    <string name="alert_button">Signaler un danger</string>
+    <string name="logout">Logout</string>
+    <string name="about">About...</string>
 </resources>

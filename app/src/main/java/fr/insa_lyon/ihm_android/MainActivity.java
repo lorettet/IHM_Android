@@ -7,7 +7,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +34,7 @@ public class MainActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_map:
-                    if(isServicesOK()) {
                         selectedFragment = new MapFragment();
-                    }
                     break;
                 case R.id.navigation_directions:
                     selectedFragment = new DirectionsFragment();
@@ -54,27 +56,18 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+
     }
 
-    public boolean isServicesOK(){
-        Log.d(TAG, "isServicesOK: cheking google services version");
-        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(MainActivity.this);
-        
-        if(available == ConnectionResult.SUCCESS)
-        {
-            // everything fine!
-            Log.d(TAG, "isServicesOK: Google Play Services is working");
-            return true;
-        }else if (GoogleApiAvailability.getInstance().isUserResolvableError(available))
-        {
-            // Issue fixable
-            Log.d(TAG, "isServicesOK: an error occured but is fixable");
-            Dialog dialog =  GoogleApiAvailability.getInstance().getErrorDialog(MainActivity.this,available,ERROR8DIALOG8REQUEST);
-            dialog.show();
-        }else{
-            Toast.makeText(MainActivity.this,"This will not work :(",Toast.LENGTH_SHORT);
-        }
-        return false;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_menu, menu);
+        return true;
+    }
+
+    public void alert(View v)
+    {
+        Toast.makeText(MainActivity.this,"Votre signalement a été pris en compte",Toast.LENGTH_LONG).show();
     }
 
 }
