@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        navigation.setSelectedItemId(R.id.navigation_map);
 
     }
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this,"Votre signalement a été pris en compte",Toast.LENGTH_LONG).show();
     }
     public void metho(View button2) {
-        Intent intent =new Intent(MainActivity.this, TrajetActivity.class);
+        Intent intent =new Intent(MainActivity.this, DirectionsActivity.class);
         startActivity(intent);
     }
 
