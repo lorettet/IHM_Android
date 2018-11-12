@@ -3,4 +3,6 @@
     <string name="title_map">Map</string>
     <string name="title_directions">Directions</string>
     <string name="title_group">Group</string>
+    <string name="title_activity_trajet">ListeTrajets</string>
+    <string name="title_activity_creer_trajet">CreerTrajetActivity</string>
 </resources>

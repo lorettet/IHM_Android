@@ -1,6 +1,7 @@
 package fr.insa_lyon.ihm_android;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,5 +78,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+    public void metho(View button2) {
+        Intent intent =new Intent(MainActivity.this, TrajetActivity.class);
+        startActivity(intent);
+    }
+
 
 }

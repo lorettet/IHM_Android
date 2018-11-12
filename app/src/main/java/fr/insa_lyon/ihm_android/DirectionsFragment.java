@@ -1,5 +1,6 @@
 package fr.insa_lyon.ihm_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,4 +16,8 @@ public class DirectionsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_directions,container,false);
     }
+
+
+
+
 }
