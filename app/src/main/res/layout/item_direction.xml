@@ -1,32 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/startDirection"/>
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:textColor="@color/colorText"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:text="00:30"
+        android:layout_alignTop="@id/dateText"
+        android:id="@+id/dateText"/>
+
     <TextView
+        android:textColor="@color/colorText"
         android:id="@+id/startText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="@string/endDirection"/>
+        android:text="23 rue de je sais pas ou"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/dateText"/>
+
     <TextView
+        android:textColor="@color/colorText"
         android:id="@+id/endText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_weight="1"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/nbPerson"/>
+        android:text="45 rue de la fin du monde"
+        android:layout_toRightOf="@id/dateText"
+        android:layout_alignBottom="@id/dateText"/>
+
+    <ImageView
+        android:id="@+id/walk_guy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_directions_walk_black_24dp"
+        android:layout_toLeftOf="@id/nbPersonText"
+        android:layout_alignBottom="@id/dateText" />
+
+    <ImageView
+        android:id="@+id/tram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_tram_black_24dp"
+        android:layout_toLeftOf="@id/walk_guy"
+        android:layout_alignBottom="@id/dateText" />
+
+    <ImageView
+        android:id="@+id/bike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_directions_bike_black_24dp"
+        android:layout_alignBottom="@id/dateText"
+        android:layout_toLeftOf="@id/tram"/>
+
     <TextView
+        android:textColor="@color/colorText"
         android:id="@+id/nbPersonText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="5"
+        android:layout_alignBottom="@id/dateText"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+
+</RelativeLayout>

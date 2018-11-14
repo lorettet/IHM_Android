@@ -10,9 +10,11 @@
         />
 
     <Button
+        android:textColor="@color/colorText"
+        android:background="@color/colorPrimary"
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:text="@string/alert_button"
         android:onClick="alert"/>

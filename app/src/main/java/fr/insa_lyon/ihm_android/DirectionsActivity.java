@@ -9,6 +9,7 @@ import android.view.View;
 
 import java.util.List;
 
+import fr.insa_lyon.ihm_android.adapter.DirectionAdapter;
 import fr.insa_lyon.ihm_android.model.Direction;
 
 public class DirectionsActivity extends AppCompatActivity {

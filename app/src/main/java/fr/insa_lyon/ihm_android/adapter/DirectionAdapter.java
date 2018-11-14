@@ -1,4 +1,4 @@
-package fr.insa_lyon.ihm_android;
+package fr.insa_lyon.ihm_android.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import fr.insa_lyon.ihm_android.R;
 import fr.insa_lyon.ihm_android.model.Direction;
 
 import static android.support.constraint.Constraints.TAG;
 
-class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.ViewHolder> {
+public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.ViewHolder> {
 
     @NonNull
     @Override
@@ -40,6 +41,8 @@ class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.ViewHolder>
         textView.setText(dir.getEnd());
         textView = viewHolder.numberPerson;
         textView.setText(Integer.toString(dir.getNumberPerson()));
+        textView = viewHolder.date;
+        textView.setText(dir.getFormtedDate());
     }
 
     @Override
@@ -52,6 +55,7 @@ class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.ViewHolder>
         public TextView start;
         public TextView end;
         public TextView numberPerson;
+        public TextView date;
 
         public ViewHolder(View itemView)
         {
@@ -60,6 +64,7 @@ class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.ViewHolder>
             start = (TextView) itemView.findViewById(R.id.startText);
             end = (TextView) itemView.findViewById(R.id.endText);
             numberPerson = (TextView) itemView.findViewById(R.id.nbPersonText);
+            date = (TextView) itemView.findViewById(R.id.dateText);
         }
     }
 
