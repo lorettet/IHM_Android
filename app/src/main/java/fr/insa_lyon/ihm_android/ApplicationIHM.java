@@ -1,9 +1,8 @@
 package fr.insa_lyon.ihm_android;
 
 import android.app.Application;
+import android.view.View;
 
-import java.sql.Time;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -19,9 +18,17 @@ public class ApplicationIHM extends Application {
         directions = new ArrayList<Direction>();
         Calendar cal = Calendar.getInstance();
         cal.set(2018,11,22,00,30);
-        directions.add(new Direction("Rue saint jean","Rue saint pierre",4,cal));
+        directions.add(new Direction("Rue saint jean","Rue saint pierre",4,cal.getTime(), View.VISIBLE, View.INVISIBLE, View.INVISIBLE));
         cal.set(2018,11,22,1,10);
-        directions.add(new Direction("Une rue","Une autre rue",1, cal));
+        directions.add(new Direction("Une rue","Une autre rue",1, cal.getTime(), View.INVISIBLE, View.VISIBLE, View.INVISIBLE));
+        cal.set(2018,11,22,1,30);
+        directions.add(new Direction("Une rue","Une autre rue",1, cal.getTime(), View.INVISIBLE, View.VISIBLE, View.INVISIBLE));
+        cal.set(2018,11,22,2,00);
+        directions.add(new Direction("Une rue","Une autre rue",5, cal.getTime(), View.INVISIBLE, View.VISIBLE, View.INVISIBLE));
+        cal.set(2018,11,22,2,00);
+        directions.add(new Direction("Une rue","Une autre rue",5, cal.getTime(), View.VISIBLE, View.INVISIBLE, View.VISIBLE));
+        cal.set(2018,11,22,2,00);
+        directions.add(new Direction("Une rue","Une autre rue",5, cal.getTime(), View.INVISIBLE, View.VISIBLE, View.INVISIBLE));
 
         messages = new ArrayList<Message>();
         User user1 = new User("Arthur");

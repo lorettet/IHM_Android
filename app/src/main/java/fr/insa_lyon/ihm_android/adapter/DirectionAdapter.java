@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -43,6 +44,14 @@ public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.View
         textView.setText(Integer.toString(dir.getNumberPerson()));
         textView = viewHolder.date;
         textView.setText(dir.getFormtedDate());
+        ImageView imageView = viewHolder.walk;
+        imageView.setVisibility(dir.getWalk());
+        imageView = viewHolder.bike;
+        imageView.setVisibility(dir.getBike());
+        imageView = viewHolder.tram;
+        imageView.setVisibility(dir.getTram());
+
+
     }
 
     @Override
@@ -56,6 +65,9 @@ public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.View
         public TextView end;
         public TextView numberPerson;
         public TextView date;
+        public ImageView walk;
+        public ImageView bike;
+        public ImageView tram;
 
         public ViewHolder(View itemView)
         {
@@ -65,6 +77,9 @@ public class DirectionAdapter extends RecyclerView.Adapter<DirectionAdapter.View
             end = (TextView) itemView.findViewById(R.id.endText);
             numberPerson = (TextView) itemView.findViewById(R.id.nbPersonText);
             date = (TextView) itemView.findViewById(R.id.dateText);
+            walk = itemView.findViewById(R.id.bike);
+            bike = itemView.findViewById(R.id.bike);
+            tram = itemView.findViewById(R.id.tram);
         }
     }
 

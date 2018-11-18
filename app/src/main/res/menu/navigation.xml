@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_map"
         android:icon="@drawable/ic_map_grey_24dp"
-        android:title="Map" />
+        android:title="Carte" />
 
     <item
         android:id="@+id/navigation_directions"
-        android:icon="@drawable/ic_directions_grey_24dp"
-        android:title="Directions" />
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Recherche" />
 
     <item
         android:id="@+id/navigation_group"
         android:icon="@drawable/ic_group_grey_24dp"
-        android:title="Group" />
+        android:title="Groupe" />
 
 </menu>

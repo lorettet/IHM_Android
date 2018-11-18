@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final int ERROR8DIALOG8REQUEST = 9001;
+    private Menu topMenu;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -36,12 +37,18 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_map:
                         selectedFragment = new MapFragment();
+                        if(topMenu != null)
+                            topMenu.findItem(R.id.leaveGroup).setVisible(false);
                     break;
                 case R.id.navigation_directions:
                     selectedFragment = new DirectionsFragment();
+                    if(topMenu != null)
+                        topMenu.findItem(R.id.leaveGroup).setVisible(false);
                     break;
                 case R.id.navigation_group:
                     selectedFragment = new GroupFragment();
+                    if(topMenu != null)
+                        topMenu.findItem(R.id.leaveGroup).setVisible(true);
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,selectedFragment).commit();
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.top_menu, menu);
+        topMenu = menu;
         return true;
     }
 

@@ -1,9 +1,10 @@
 package fr.insa_lyon.ihm_android;
 
-import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,27 +17,18 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 
-public class GroupFragment extends Fragment implements OnMapReadyCallback {
+public class RecapDirectionActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap googleMap;
     MapView mapView;
-    View view;
 
-    public GroupFragment(){}
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_group,container,false);
-
-        return view;
-    }
 
     @Override
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recap_direction);
 
-        mapView = (MapView) view.findViewById(R.id.mapGroup);
+        mapView = (MapView) findViewById(R.id.mapRecpDirection);
         if(mapView != null)
         {
             mapView.onCreate(null);
@@ -47,7 +39,7 @@ public class GroupFragment extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        MapsInitializer.initialize(getContext());
+        MapsInitializer.initialize(this);
         this.googleMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 

@@ -38,4 +38,10 @@ public class DirectionsActivity extends AppCompatActivity {
         Intent intent =new Intent(DirectionsActivity.this, NewDirectionActivity.class);
         startActivity(intent);
     }
+
+    public void openDirection(View v)
+    {
+        Intent intent =new Intent(DirectionsActivity.this, RecapDirectionActivity.class);
+        startActivity(intent);
+    }
 }

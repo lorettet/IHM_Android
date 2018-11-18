@@ -7,28 +7,48 @@
     android:padding="@dimen/activity_vertical_margin"
     android:background="@color/colorBackground">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startDirection"
-        android:textColor="@color/colorText"/>
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:textColor="@color/colorText"
-
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/endDirection"
-        android:textColor="@color/colorText"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLines="1"/>
+        android:layout_marginBottom="@dimen/activity_horizontal_margin">
+        <View
+            android:layout_width="1dp"
+            android:layout_height="100dp"
+            android:background="@color/colorWhite"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/startDirection"
+                    android:textColor="@color/colorWhite"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/endDirection"
+                    android:textColor="@color/colorWhite"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 
     <TimePicker
         android:layout_width="match_parent"
