@@ -41,12 +41,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:text="Une rue quelque part"
-                        android:textColor="@color/colorText"/>
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Une rue quelque part"
+                            android:textColor="@color/colorText"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_place_black_24dp"/>
+
+                    </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -60,12 +71,21 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_tram_black_24dp"/>
                     </LinearLayout>
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:text="La rue d'arrivé "
-                        android:textColor="@color/colorText"/>
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Une autre rue mais autre part"
+                            android:textColor="@color/colorText"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_place_red_24dp"/>
+                    </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
             <TextView
@@ -99,7 +119,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:text="Alors ceci est une longue description, on va partir de la rue de la voie super lonuge en tram puis en velo puis en trm puis a pied puis en pnoey pour arriver sans mourir a l'INSA"/>
+                    android:text="Alors ceci est une longue description, on va partir de la rue de la voie super longue en tram puis en vélo puis en tram puis a pied puis en poney pour arriver sans mourir à l'INSA"/>
 
                 <ImageButton
                     android:background="@color/colorPrimary"

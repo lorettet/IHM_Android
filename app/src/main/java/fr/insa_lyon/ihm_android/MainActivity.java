@@ -1,6 +1,8 @@
 package fr.insa_lyon.ihm_android;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int ERROR8DIALOG8REQUEST = 9001;
     private Menu topMenu;
+    MapFragment mapFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_map:
                         selectedFragment = new MapFragment();
+                        mapFragment = (MapFragment) selectedFragment;
                         if(topMenu != null)
                             topMenu.findItem(R.id.leaveGroup).setVisible(false);
                     break;
@@ -76,7 +80,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void alert(View v)
     {
-        Toast.makeText(MainActivity.this,"Votre signalement a été pris en compte",Toast.LENGTH_LONG).show();
+        AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+        alertBuilder.setTitle("Confirmation");
+        alertBuilder.setMessage("Etes-vous sûr de vouloir signaler une zone dangereuse à cet endroit?");
+        alertBuilder.setCancelable(false);
+        alertBuilder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this,"Votre signalement a été pris en compte",Toast.LENGTH_LONG).show();
+                mapFragment.setNewArea();
+            }
+        });
+        alertBuilder.setNegativeButton("Non", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alertBuilder.show();
+
     }
     public void metho(View button2) {
         Intent intent =new Intent(MainActivity.this, DirectionsActivity.class);

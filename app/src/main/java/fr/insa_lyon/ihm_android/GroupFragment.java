@@ -13,8 +13,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class GroupFragment extends Fragment implements OnMapReadyCallback {
 
@@ -50,8 +53,12 @@ public class GroupFragment extends Fragment implements OnMapReadyCallback {
         MapsInitializer.initialize(getContext());
         this.googleMap = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.setMyLocationEnabled(true);
 
         CameraPosition centerMapPosition = CameraPosition.builder().target(new LatLng(45.7839047,4.8800735)).zoom(16).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(centerMapPosition));
+
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(45.784052,4.874711)));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(45.784635,4.883959)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
     }
 }
